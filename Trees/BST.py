@@ -210,29 +210,11 @@ class BST(BinaryTree):
         HINT:
         Use a recursive helper function.
         '''
-        #print('inside remove not _remove')
-        '''
-        if self.root:
-            if self.root.value == value: 
-                if self.root.right and self.root.left: 
-                    self.root.value = BST._find_smallest(self.root.right)
-                    self.root = BST._remove(self.root.right, self.root.value)
-                elif self.root.right or self.root.left:
-                    if self.root.right:
-                        self.root = BST._remove(self.root.right,value)
-                    if self.root.left:
-                        self.root = BST._remove(self.root.left,value)
-                else:
-                    self.root = None
-            else:
-                self.root = BST._remove(self.root,value)
-        '''
         self.root = BST._remove(self.root,value)
 
     @staticmethod
     def _remove(node, value):
 
-        #print('node=',node ,'value=',value)
         if node is None: 
             return 
         if value > node.value:
@@ -254,49 +236,6 @@ class BST(BinaryTree):
 
         return node
 
-        '''
-        if node.right:
-            #print('  if node.right')
-            if node.right.value == value: 
-                #print('  if node.right.value == value')
-                #third case = two subtrees
-                if node.right.left and node.right.right:
-                    #print('  if node.right.left and node.right.right')
-                    node.right.value = BST._find_smallest(node.right.right)
-                    BST._remove(node.right.right, node.right.value)
-                #second case = one subtree
-                elif node.right.left or node.right.right:
-                    #print('  if node.right.left or node.right.right')
-                    if node.right.left:
-                        BST._remove(node.right.left, value)
-                    if node.right.right:
-                        BST._remove(node.right.right, value)
-                #first case = leaf
-                else: 
-                    #print('  it should remove')
-                    node.right = None
-        
-        if node.left: 
-            #print('  if node.left')
-            if node.left.value == value: 
-                #print('  if node.left.value == value')
-            #third case, when two trees exist
-                if node.left.left and node.left.right: 
-                    #print('  if node.left.left and node.left.right')
-                    node.left.value = BST._find_smallest(node.left.right)
-                    BST._remove(node.left.right, node.left.value)
-            #second case, when one tree (either left or right) exists
-                elif node.left.left or node.left.right:
-                    #print('  if node.left.left or node.left.right')
-                    if node.left.left:
-                        BST._remove(node.left.left, value)
-                    if node.left.right:
-                        BST._remove(node.left.right, value)
-            #first case, when leaf
-                else:
-                    #print('  it should remove')
-                    node.left = None
-        '''
     def remove_list(self, xs):
         '''
         Given a list xs, remove each element of xs from self.
@@ -306,16 +245,3 @@ class BST(BinaryTree):
         '''
         for x in xs: 
             self.remove(x)
-
-bst1 = BST()
-bst1.root = Node(0)
-bst1.root.left = Node(-2)
-bst1.root.left.left = Node(-3)
-bst1.root.left.right = Node(-1)
-bst1.root.right = Node(2)
-bst1.root.right.left = Node(1)
-bst1.root.right.right = Node(3)
-
-bst2 = BST()
-bst2.root = Node(0)
-bst2.root.right = Node(1)
