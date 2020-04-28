@@ -74,7 +74,6 @@ class AVLTree(BST):
         The textbook's class hierarchy for their AVL tree code is fairly different from our class hierarchy,
         however, so you will have to adapt their code.
         '''
-
         if node is None or node.right is None: 
             return node
 
@@ -168,3 +167,5 @@ class AVLTree(BST):
 
         return node
 
+
+    
