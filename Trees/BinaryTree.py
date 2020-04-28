@@ -198,7 +198,6 @@ class BinaryTree():
             if node.right:
                 size += 1
                 stack.append(node.right)
-
         return size 
 
     def size_(self, node):
