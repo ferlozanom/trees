@@ -236,7 +236,6 @@ class BST(BinaryTree):
 
         return node
 
-        '''
     def remove_list(self, xs):
         '''
         Given a list xs, remove each element of xs from self.
