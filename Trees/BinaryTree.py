@@ -140,7 +140,6 @@ class BinaryTree():
         FIXME:
         Implement this function by modifying the _print functions above.
         '''
-
         if start:
             traversal.append(start.value)
             traversal = self.preorder(start.left, traversal)
@@ -187,7 +186,6 @@ class BinaryTree():
         '''
         if self.root is None: 
             return 0
-
         stack = []
         stack.append(self.root)
         size = 1
@@ -199,7 +197,6 @@ class BinaryTree():
             if node.right:
                 size += 1
                 stack.append(node.right)
-
         return size 
 
     def size_(self, node):
