@@ -187,7 +187,6 @@ class BinaryTree():
         '''
         if self.root is None: 
             return 0
-
         stack = []
         stack.append(self.root)
         size = 1
