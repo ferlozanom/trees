@@ -22,7 +22,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
     ],
-    packages=["trees"],
+    packages=["Trees"],
     include_package_data=False,
     install_requires=["pytest", "hypothesis"],
     entry_points={
